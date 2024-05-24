@@ -2,22 +2,20 @@
 
 [![NPM version](https://img.shields.io/npm/v/slidev-theme-excali-slide?color=3AB9D4&label=)](https://www.npmjs.com/package/slidev-theme-excali-slide)
 
-A (...) theme for [Slidev](https://github.com/slidevjs/slidev).
+A [Excalidraw](https://excalidraw.com/)-like theme for [Slidev](https://github.com/slidevjs/slidev).
 
-<!--
-  Learn more about how to write a theme:
-  https://sli.dev/themes/write-a-theme.html
---->
+Theme comes with animated heading highlights. You can customize their colors by setting up following properties:
 
-<!--
-  run `npm run dev` to check out the slides for more details of how to start writing a theme
--->
+<pre><code>---
+themeConfig:
+  primary-highlight: #F3EFF5
+  secondary-highlight: #161C2C
+---</code></pre>
 
-<!--
-  Put some screenshots here to demonstrate your theme
+Theme works in dark mode too.
 
-  Live demo: [...]
--->
+![Default Slide](./images/default_slide.png)
+![Intro Slide](./images/intro_slide.png)
 
 ## Install
 
@@ -28,18 +26,6 @@ theme: <b>excali-slide</b>
 ---</code></pre>
 
 Learn more about [how to use a theme](https://sli.dev/themes/use).
-
-## Layouts
-
-This theme provides the following layouts:
-
-> TODO:
-
-## Components
-
-This theme provides the following components:
-
-> TODO:
 
 ## Contributing
 
