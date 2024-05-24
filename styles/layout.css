@@ -66,6 +66,10 @@ h1::before {
   background-color:var(--slidev-theme-primary-highlight);
 }
 
+.cover h1::before, .center h1::before {
+  background-color:var(--slidev-theme-secondary-highlight);
+}
+
 h2::before {
   background-color:var(--slidev-theme-secondary-highlight);
   animation-delay: 0.35s;
