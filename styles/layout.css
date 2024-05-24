@@ -1,0 +1,85 @@
+@font-face {
+	font-family: 'Virgil';
+	src: local("Virgil"),
+    url("/fonts/Virgil.woff2") format("woff");
+}
+
+:root {
+  --slidev-primary-highlight: #F02D5E;
+  --slidev-secondary-highlight: #41B0F6;
+}
+
+.light #slide-content {
+  background-color: #F5FAFF;
+  color: #1E1E1E;
+}
+
+.dark #slide-content {
+  background-color: #13171B;
+  color: #D3D3D3;
+}
+
+.slidev-layout.cover,
+.slidev-layout.intro {
+  @apply h-full grid;
+
+  h1 {
+    @apply text-6xl leading-20;
+  }
+
+  h1 + p {
+    @apply -mt-2 opacity-50 mb-4;
+  }
+
+  p + h2,
+  ul + h2,
+  table + h2 {
+    @apply mt-10;
+  }
+}
+
+h1, h2 {
+  position:relative;
+  display: inline-block;
+}
+
+h1:before, h2::before {
+  content:"";
+  height: 0.9em;
+  position:absolute;
+  z-index:-1;
+  filter: url(#marker-shape);
+  left:-0.25em;
+  top:0.1em;
+  padding:0 0.35em;
+  transform: rotate(-0.5deg);
+  animation-name: markerSwipe;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 17%, rgba(0,0,0,0.85) 43%, rgba(0,0,0,0.9) 64%, rgba(0,0,0,0.8) 88%, rgba(0,0,0,0.6) 100%);
+
+}
+
+h1::before {
+  background-color:var(--slidev-primary-highlight);
+}
+
+h2::before {
+  background-color:var(--slidev-secondary-highlight);
+  animation-delay: 0.35s;
+}
+
+@keyframes markerSwipe {
+  0% {
+    width: 0%;
+  }
+  1% {
+    opacity: 1;
+  }
+  100% {
+    width: calc(100% + 1.8rem);
+    opacity: 1;
+  }
+}
