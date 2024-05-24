@@ -1,6 +1,6 @@
 {
   "name": "slidev-theme-excali-slide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "keywords": [
     "slidev-theme",
@@ -34,5 +34,13 @@
         "mono": "Fira Code"
       }
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filiphric/slidev-theme-excali-slide.git"
+  },
+  "bugs": {
+    "url": "https://github.com/filiphric/slidev-theme-excali-slide/issues"
+  },
+  "homepage": "https://github.com/filiphric/slidev-theme-excali-slide#readme"
 }
