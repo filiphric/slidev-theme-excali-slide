@@ -4,6 +4,14 @@
 
 A [Excalidraw](https://excalidraw.com/)-like theme for [Slidev](https://github.com/slidevjs/slidev).
 
+![Default Slide](./images/default_slide.png)
+![Intro Slide](./images/intro_slide.png)
+
+Theme works in dark mode too. In this case, the highlight color have the opacity set to 0.9.
+
+![Default Slide Dark](./images/default_slide_dark.png)
+![Intro Slide Dark](./images/intro_slide_dark.png)
+
 Theme comes with animated heading highlights. You can customize their colors by setting up following properties:
 
 <pre><code>---
@@ -12,10 +20,8 @@ themeConfig:
   secondary-highlight: #161C2C
 ---</code></pre>
 
-Theme works in dark mode too.
 
-![Default Slide](./images/default_slide.png)
-![Intro Slide](./images/intro_slide.png)
+
 
 ## Install
 
