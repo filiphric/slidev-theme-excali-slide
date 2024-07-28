@@ -16,8 +16,8 @@ Theme comes with animated heading highlights. You can customize their colors by 
 
 <pre><code>---
 themeConfig:
-  primary-highlight: #F3EFF5
-  secondary-highlight: #161C2C
+  primary-highlight: '#F3EFF5'
+  secondary-highlight: '#161C2C'
 ---</code></pre>
 
 
@@ -31,7 +31,7 @@ Add the following frontmatter to your `slides.md`. Start Slidev then it will pro
 theme: <b>excali-slide</b>
 ---</code></pre>
 
-Learn more about [how to use a theme](https://sli.dev/themes/use).
+Learn more about [how to use a theme](https://sli.dev/guide/theme-addon#use-theme).
 
 ## Contributing
 
