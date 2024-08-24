@@ -1,6 +1,10 @@
 ---
 theme: ./
 layout: intro
+themeConfig:
+  primary-highlight: "#ff657a"
+  secondary-highlight: "#ffd76d"
+  marker-animation: disabled
 ---
 
 # Slidev Theme Starter

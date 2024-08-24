@@ -18,6 +18,7 @@ Theme comes with animated heading highlights. You can customize their colors by 
 themeConfig:
   primary-highlight: '#F3EFF5'
   secondary-highlight: '#161C2C'
+  marker-animation: disabled; // optional
 ---</code></pre>
 
 

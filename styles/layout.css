@@ -7,6 +7,7 @@
 :root {
   --slidev-theme-primary-highlight: #fdff32;
   --slidev-theme-secondary-highlight: #00ff04;
+  --slidev-theme-marker-animation: enabled;
 }
 
 .light #slide-content {
@@ -58,7 +59,7 @@ h1:before, h2::before {
   top:0.1em;
   padding:0 0.35em;
   transform: rotate(-0.5deg);
-  animation-name: markerSwipe;
+  animation-name: var(--slidev-theme-marker-animation, disabled);
   animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
   animation-duration: 0.3s;
   animation-fill-mode: forwards;
@@ -81,14 +82,13 @@ h1::before, .intro h1::before {
 
 h2::before {
   background-color:var(--slidev-theme-secondary-highlight);
-  animation-delay: 0.35s;
 }
 
 .dark h2::before {
   opacity: 0.9 !important;
 }
 
-@keyframes markerSwipe {
+@keyframes enabled {
   0% {
     width: 0%;
   }
@@ -98,5 +98,23 @@ h2::before {
   100% {
     width: calc(100% + 1.8rem);
     opacity: 1;
+  }
+}
+
+@keyframes disabled {
+  0% {
+    opacity: 1;
+    width: calc(100% + 1.8rem);
+    animation-delay: 0;
+  }
+  1% {
+    opacity: 1;
+    width: calc(100% + 1.8rem);
+    animation-delay: 0;
+  }
+  100% {
+    opacity: 1;
+    width: calc(100% + 1.8rem);
+    animation-delay: 0;
   }
 }
