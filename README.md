@@ -24,6 +24,30 @@ themeConfig:
 
 
 
+## Handwritten Text
+
+The theme includes a `v-draw` directive that animates text with a handwriting effect using the Virgil font.
+
+![Handwritten Text](./images/handdrawn.gif)
+
+```html
+<div v-draw>Hello World</div>
+
+<!-- Font size and text alignment are inherited from the element's CSS -->
+<div class="text-4xl text-center" v-draw="{ color: '#ff657a', duration: 3000 }">Custom text</div>
+```
+
+Available options:
+
+| Option | Default | Description |
+| --- | --- | --- |
+| `strokeWidth` | `2` | Stroke width |
+| `color` | `currentColor` | Text color |
+| `duration` | `2000` | Animation duration in ms |
+| `delay` | `0` | Animation delay in ms |
+
+The directive also works with `v-click` — the animation will play when the element is revealed.
+
 ## Install
 
 Add the following frontmatter to your `slides.md`. Start Slidev then it will prompt you to install the theme automatically.
