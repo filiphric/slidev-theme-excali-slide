@@ -32,6 +32,7 @@ Add the following frontmatter to your `slides.md`. Start Slidev then it will pro
 theme: <b>excali-slide</b>
 ---</code></pre>
 
+
 Learn more about [how to use a theme](https://sli.dev/guide/theme-addon#use-theme).
 
 ## Contributing
