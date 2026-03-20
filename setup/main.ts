@@ -1,4 +1,6 @@
 import { defineAppSetup } from '@slidev/types'
+// @ts-ignore — vara is a CJS module without type declarations
+import Vara from 'vara'
 
 const fontUrl = new URL('../public/fonts/vara/Virgil.json', import.meta.url).href
 
@@ -52,50 +54,47 @@ export default defineAppSetup(({ app }) => {
         const cfg = el._drawConfig
         const hidden = isVClickHidden()
 
-        import('vara').then((mod) => {
-          const Vara = mod.default || mod
-          const varaInstance = new Vara(
-            `#${el.id}`,
-            fontUrl,
-            [
-              {
-                text: cfg.lines,
-                fontSize: cfg.fontSize,
-                strokeWidth: cfg.strokeWidth,
-                color: cfg.color,
-                duration: cfg.duration,
-                delay: cfg.delay,
-                autoAnimation: !hidden,
-              },
-            ],
+        const varaInstance = new Vara(
+          `#${el.id}`,
+          fontUrl,
+          [
             {
-              textAlign: cfg.textAlign,
-            }
-          )
-
-          el._varaInstance = varaInstance
-
-          // Make SVG overflow visible
-          const svg = el.querySelector('svg')
-          if (svg) svg.style.overflow = 'visible'
-
-          // If hidden by v-click, watch for reveal then play
-          if (hidden) {
-            const clickObserver = new MutationObserver(() => {
-              if (!isVClickHidden()) {
-                varaInstance.playAll()
-                clickObserver.disconnect()
-                el._varaClickObserver = null
-              }
-            })
-            let node: HTMLElement | null = el
-            while (node) {
-              clickObserver.observe(node, { attributes: true, attributeFilter: ['class'] })
-              node = node.parentElement
-            }
-            el._varaClickObserver = clickObserver
+              text: cfg.lines,
+              fontSize: cfg.fontSize,
+              strokeWidth: cfg.strokeWidth,
+              color: cfg.color,
+              duration: cfg.duration,
+              delay: cfg.delay,
+              autoAnimation: !hidden,
+            },
+          ],
+          {
+            textAlign: cfg.textAlign,
           }
-        })
+        )
+
+        el._varaInstance = varaInstance
+
+        // Make SVG overflow visible
+        const svg = el.querySelector('svg')
+        if (svg) svg.style.overflow = 'visible'
+
+        // If hidden by v-click, watch for reveal then play
+        if (hidden) {
+          const clickObserver = new MutationObserver(() => {
+            if (!isVClickHidden()) {
+              varaInstance.playAll()
+              clickObserver.disconnect()
+              el._varaClickObserver = null
+            }
+          })
+          let node: HTMLElement | null = el
+          while (node) {
+            clickObserver.observe(node, { attributes: true, attributeFilter: ['class'] })
+            node = node.parentElement
+          }
+          el._varaClickObserver = clickObserver
+        }
       }
 
       // Use IntersectionObserver to detect when the slide is actually visible.
