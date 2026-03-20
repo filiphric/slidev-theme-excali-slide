@@ -76,6 +76,17 @@ function updateUser(id: number, update: Partial<User>) {
 ```
 
 ---
+
+# Handwritten Text
+
+<p v-draw>Use the "v-draw" directive to animate text with a handwriting effect.</p>
+
+<div class="text-2xl mt-12" v-draw="{ duration: 10000 }">This text is drawn with slower animation</div>
+
+<div class="text-md mt-12" v-draw="{ delay: 3000 }">This text is delayed by 3 seconds</div>
+
+
+---
 layout: center
 class: "text-center"
 ---
