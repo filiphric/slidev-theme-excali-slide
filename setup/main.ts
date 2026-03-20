@@ -1,6 +1,5 @@
 import { defineAppSetup } from '@slidev/types'
-// @ts-ignore — vara is a CJS module without type declarations
-import Vara from 'vara'
+import 'vara'
 
 const fontUrl = new URL('../public/fonts/vara/Virgil.json', import.meta.url).href
 
@@ -54,7 +53,7 @@ export default defineAppSetup(({ app }) => {
         const cfg = el._drawConfig
         const hidden = isVClickHidden()
 
-        const varaInstance = new Vara(
+        const varaInstance = new (window as any).Vara(
           `#${el.id}`,
           fontUrl,
           [
