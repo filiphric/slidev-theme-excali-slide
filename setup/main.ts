@@ -52,7 +52,8 @@ export default defineAppSetup(({ app }) => {
         const cfg = el._drawConfig
         const hidden = isVClickHidden()
 
-        import('vara').then(({ default: Vara }) => {
+        import('vara').then((mod) => {
+          const Vara = mod.default || mod
           const varaInstance = new Vara(
             `#${el.id}`,
             fontUrl,
